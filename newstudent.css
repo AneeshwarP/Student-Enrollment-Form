@@ -1,0 +1,119 @@
+*{
+    margin: 0px;
+    padding: auto;
+    font-family: 'Times New Roman', Times, serif;
+  
+}
+
+.container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    position: relative;
+    box-sizing: border-box;
+    left: 17%;
+    top: 10px;
+}
+
+.header{
+    background-color: rgb(10, 81, 128);
+    color: white;
+    height: 40px;
+    text-align: center;
+}
+
+.footer{
+    background-color: rgb(10, 81, 128);
+    color: rgba(12, 1, 1, 0.918);
+    height: 30px;
+    text-align: center;
+  
+}
+
+
+
+.main{
+    
+    height: 500px;
+    
+    background-color: darkblue;
+    flex-direction: row;
+    display: flex;
+    justify-content: space-around;
+    text-align: left;
+    flex-wrap: wrap;
+    width: 100%;
+    
+
+}
+
+.main-left{
+    
+    height: 500px;
+    width: 49.5%;
+    background-image:url(mountain.jpg);
+    
+    
+}
+.main-right{
+    
+    background-color: rgba(8, 243, 231, 0.938);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    overflow: scroll;
+    height: 500px;
+    float: right;
+    width: 50%;
+
+  
+}
+#image{
+    height: 200px;
+    width: 150px;
+    border: 2px solid paleturquoise;
+    
+}
+.image1{
+    height: 200px;
+    width: 150px;
+    border: 2px solid paleturquoise;
+    border-radius: 120px;
+
+}
+
+#tabid{
+    height: 40px;
+    
+    
+}
+@media  screen and (max-width: 780px) {
+    .main{
+        margin-bottom: 5px ;
+        width: 100%;
+        overflow: scroll;
+    }
+    .main-left{
+    
+    
+      
+        width: 102%;
+        
+        
+    }
+    .main-right{
+       
+       overflow: scroll;
+       width: 102%;
+
+    
+      
+    }
+    #table1{
+        border-left: rgb(108, 233, 202);
+        width: 100%;
+        
+    }
+    
+}
+

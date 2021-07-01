@@ -1,0 +1,114 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Student Enrollment Form</title>
+    <link rel="stylesheet" href="newstudent.css">
+    <link rel="stylesheet" href="bootstrap.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Kristi&display=swap" rel="stylesheet">
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"  ></script>
+</head>
+<body>
+	<div  id="container"> 
+        <div class="header"><h2>Student Enrollment Form </h2></div>
+                <div class="main">
+                    <div class="main-left">
+                        <table class="table table-hover table-responsive" id="table1">
+                            <tr>
+                                 <td><label for="name">Enter Your Name</label></td> <td><input type="text" class="name" id="name" placeholder="Enter your full name" required>
+                                </td>
+                            </tr>
+                            <tr> 
+                                <td><label for="Email">Enter Your Email_ID</label></td> <td><input type="email" class="email" id="email" required>
+                                </td>
+                            </tr>
+                  
+                            <tr> 
+                                <td><label for="file">Upload Your Image Here</label><br></td> <td><input type="file" onchange="loadFile(event)" accept="image/*"class="file" id="file" placeholder=" url of Image link">
+                                </td>
+                            </tr>
+                            <tr> <td><label for="gender">Gender: </label></td>
+                                <td>
+                                    <input type="radio" name="gender" class="gender" id="male" value="Male">Male
+                                    <input type="radio" name="gender" class="gender" id="female" value="female">female
+                                </td></tr>
+
+                            <tr> <td> <label for="website" aria-readonly="false" aria-disabled="false">Mention Your Skills:</label></td> 
+                                    <td>
+                                        <form id="checkform">
+                                            <input type="checkbox" name="skills" id="java" value="Java">Java
+                                            <input type="checkbox" name="skills" id ="css"value="CSS">CSS
+                                            <input type="checkbox" name="skills" id="html"value="HTML">HTML
+                                            
+                                            </form>
+        
+                                   </td>
+                            </tr>
+
+                            <tr><td>
+                                <button onclick="validate()">Submit
+                             
+                         </td><td>
+                                <button type="reset" onclick="reset()">Reset</button></td>
+                                
+                             </tr>
+
+                          
+                        </table>
+
+
+                    </div>
+                    <div class="main-right">
+                        <table class="table table-striped col-4"  id="tabid">
+                            <tr><th>Your Details</th><th>Image</th></tr>
+                            <tbody id="bodyright"></tbody>  
+                        
+    
+                            
+                        </table>
+    
+                    </div>
+
+
+                </div>
+                <div class="footer">Designed By Aneeshwar P </div>
+               </div>
+<script>
+
+        //for storing of local stroge data url to be fetched  ;
+      document.querySelector('#file').addEventListener('change',function(){
+      const reader1=new FileReader();
+      
+      reader1.addEventListener("load"  ,()=>{
+        localStorage.setItem('image',reader1.result);
+
+      });
+		reader1.readAsDataURL(this.files[0]);
+
+       });
+       
+        //for display of image
+        function loadFile(event){
+            var reader = new FileReader;
+            reader.onload = function(){
+                var output = document.getElementById('image');
+                output.src = reader.result;
+            }
+            reader.readAsDataUrl(event.target.files[0]);
+            document.getElementById('image').style.display="block";
+        }
+
+
+
+
+</script>
+
+<script src="newstudent.js"></script>
+
+
+</body>
+</html>
